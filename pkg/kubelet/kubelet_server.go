@@ -22,7 +22,7 @@ import (
 	"net/url"
 
 	"github.com/GoogleCloudPlatform/kubernetes/pkg/api"
-	"gopkg.in/v1/yaml"
+	"gopkg.in/yaml.v1"
 )
 
 type KubeletServer struct {

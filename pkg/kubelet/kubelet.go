@@ -26,6 +26,7 @@ import (
 	"math/rand"
 	"net/http"
 	"os/exec"
+	"os"
 	"strconv"
 	"strings"
 	"sync"
@@ -36,7 +37,7 @@ import (
 	"github.com/GoogleCloudPlatform/kubernetes/pkg/util"
 	"github.com/coreos/go-etcd/etcd"
 	"github.com/fsouza/go-dockerclient"
-	"gopkg.in/v1/yaml"
+	"gopkg.in/yaml.v1"
 )
 
 // State, sub object of the Docker JSON data
@@ -190,6 +191,12 @@ func (sl *Kubelet) ListContainers() ([]string, error) {
 func (sl *Kubelet) pullImage(image string) error {
 	sl.pullLock.Lock()
 	defer sl.pullLock.Unlock()
+
+	// Check if the bypass file exists
+	if _, err := os.Stat("/etc/kubernetes_skip_pull"); err == nil {
+		return nil // File exists, bypass the pull and return success
+	}
+
 	cmd := exec.Command("docker", "pull", image)
 	err := cmd.Start()
 	if err != nil {

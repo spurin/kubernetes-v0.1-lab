@@ -32,7 +32,7 @@ import (
 
 	"github.com/GoogleCloudPlatform/kubernetes/pkg/api"
 	"github.com/GoogleCloudPlatform/kubernetes/pkg/client"
-	"gopkg.in/v1/yaml"
+	"gopkg.in/yaml.v1"
 )
 
 func promptForString(field string) string {
