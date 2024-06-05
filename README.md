@@ -1,4 +1,4 @@
-# Kubernetes v0.1.0 (First Commit)
+# Kubernetes v0.1 (First Commit)
 
 ## Overview
 
