@@ -125,7 +125,7 @@ etcdctl ls --recursive
 Clone this project repository and move to the kubernetes-v0.1.0 folder -
 
 ```bash
-git clone https://github.com/spurin/kubernetes-v0.1.0.git
+git clone https://github.com/spurin/kubernetes-v0.1-lab.git
 cd kubernetes-v0.1.0
 ```
 
