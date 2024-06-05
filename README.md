@@ -122,11 +122,11 @@ If we check etcdctl, currently we have no keys -
 etcdctl ls --recursive
 ```
 
-Clone this project repository and move to the kubernetes-v0.1 folder -
+Clone this project repository and move to the kubernetes-v0.1-lab folder -
 
 ```bash
 git clone https://github.com/spurin/kubernetes-v0.1-lab.git
-cd kubernetes-v0.1
+cd kubernetes-v0.1-lab
 ```
 
 Run the apiserver in the background as root and follow the logs, press `Ctrl-C` when you're ready, this will continue to run in the background -
